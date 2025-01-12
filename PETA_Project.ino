@@ -244,41 +244,41 @@ void sensor() {
 
 void playFinalTune() {
   // Add a tune to play when suicides mode ends
-  /* for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 3; i++) {
     digitalWrite(buzzer1, HIGH);
     digitalWrite(buzzer2, HIGH);
     delay(200);
     digitalWrite(buzzer1, LOW);
     digitalWrite(buzzer2, LOW);
     delay(200);
-  } */
+  } 
 }
 
 void led_blink() {
-  //digitalWrite(buzzer1, HIGH);
+  digitalWrite(buzzer1, HIGH);
   delay(100);
-  //digitalWrite(buzzer1, LOW);
+  digitalWrite(buzzer1, LOW);
   digitalWrite(led_red, HIGH);
   delay(1000);
-  //digitalWrite(buzzer1, HIGH);
+  digitalWrite(buzzer1, HIGH);
   delay(100);
-  //digitalWrite(buzzer1, LOW);
+  digitalWrite(buzzer1, LOW);
   digitalWrite(led_yellow, HIGH);
   delay(1000);
-  //digitalWrite(buzzer1, HIGH);
+  digitalWrite(buzzer1, HIGH);
   delay(100);
-  //digitalWrite(buzzer1, LOW);
+  digitalWrite(buzzer1, LOW);
   digitalWrite(led_green, HIGH);
   delay(1000);
 
-  //digitalWrite(buzzer1, HIGH);
-  //digitalWrite(buzzer2, HIGH);
+  digitalWrite(buzzer1, HIGH);
+  digitalWrite(buzzer2, HIGH);
   digitalWrite(led_red, LOW);
   digitalWrite(led_yellow, LOW);
   digitalWrite(led_green, LOW);
   delay(1000);
-  //digitalWrite(buzzer1, LOW);
-  //digitalWrite(buzzer2, LOW);
+  digitalWrite(buzzer1, LOW);
+  digitalWrite(buzzer2, LOW);
 
   delay(1000);
 }
