@@ -180,6 +180,11 @@ void sensor() {
       if (distance >= randomDistance) {
         directionAway = false;  // Runner is now close enough, turn around
         Serial.println("Run back!");
+
+        // Make buzzer1 beep for 25 ms to signal a turnaround
+        digitalWrite(buzzer1, HIGH);
+        delay(25);
+        digitalWrite(buzzer1, LOW);
       }
     } else {
       // When running back to the sensor, check if the distance is less than 40 cm
@@ -190,6 +195,11 @@ void sensor() {
         totalDistance += randomDistance;  // Add random distance to total distance
         Serial.print("Suicides left: ");
         Serial.println(suicidesLeft);
+
+        // Make buzzer1 beep for 25 ms to signal a turnaround
+        digitalWrite(buzzer1, HIGH);
+        delay(25);
+        digitalWrite(buzzer1, LOW);
 
         if (suicidesLeft <= 0) {
           // Once all suicides are done, play a final tune
@@ -227,6 +237,9 @@ void sensor() {
         // Blink blue LED twice to signal lap completion
         for (int i = 0; i < 10; i++) {
           digitalWrite(led_blue, LOW);
+          digitalWrite(buzzer1, HIGH);
+          delay(10);
+          digitalWrite(buzzer1, LOW);
           delay(100);
           digitalWrite(led_blue, HIGH);
           delay(100);
@@ -251,7 +264,7 @@ void playFinalTune() {
     digitalWrite(buzzer1, LOW);
     digitalWrite(buzzer2, LOW);
     delay(200);
-  } 
+  }
 }
 
 void led_blink() {
